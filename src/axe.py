@@ -33,13 +33,11 @@ def process_response(response_dict, mapping):
 def axe_scan():
     url = request.args.get('url')
     # Get the proxy from the environment variable
-    proxy_http = os.environ.get('PROXY_HTTP')
-    # Get the proxy from the environment variable
-    proxy_https = os.environ.get('PROXY_HTTPS')
+    proxy = os.environ.get('http_proxy')
     cmd = f'axe {url} --chromedriver-path /usr/local/bin/chromedriver --chrome-options="no-sandbox" --stdout'
-    if proxy_http and proxy_https:
+    if proxy:
         # Prepend the proxy environment variables to the command
-        cmd = f'proxy_http={proxy_http} proxy_https={proxy_https} ' + cmd
+        cmd = f'http_proxy={proxy} https_proxy={proxy} ' + cmd
     output = subprocess.check_output(cmd, shell=True)
     response = json.loads(output.decode('utf-8'))
 
