@@ -29,8 +29,9 @@ def process_response(response_dict, mapping):
 
 @app.route('/axe')
 def axe_scan():
+    proxy_address = 'http://192.168.1.15:18888'
     url = request.args.get('url')
-    cmd = f'axe {url} --chromedriver-path /usr/local/bin/chromedriver --chrome-options="no-sandbox" --stdout'
+    cmd = f'axe {url} --chromedriver-path /usr/local/bin/chromedriver --chrome-options="no-sandbox" --proxy-server={proxy_address} --stdout'
     output = subprocess.check_output(cmd, shell=True)
     response = json.loads(output.decode('utf-8'))
 
