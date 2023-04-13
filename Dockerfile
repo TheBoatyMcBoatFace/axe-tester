@@ -63,8 +63,11 @@ RUN npm install -g @axe-core/cli
 ENV APP_PORT 8083
 
 # Set up the proxy environment variables
-ENV http_proxy http://192.168.1.15:18888
-ENV https_proxy http://192.168.1.15:18888
+ENV PROXY_USERNAME your_proxy_username
+ENV PROXY_PASSWORD your_proxy_password
+ENV PROXY_HTTP http://${PROXY_USERNAME}:${PROXY_PASSWORD}@192.168.1.15:18888
+ENV PROXY_HTTPS http://${PROXY_USERNAME}:${PROXY_PASSWORD}@192.168.1.15:18888
+
 
 EXPOSE $APP_PORT
 
