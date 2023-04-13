@@ -1,6 +1,8 @@
 # Axe Python Tester 🛡️🐍
 Axe Python Tester is a Python-based web accessibility testing tool that uses the powerful [axe-core](https://github.com/dequelabs/axe-core) library to analyze websites and web applications. With this tool, you can quickly identify accessibility issues and get actionable insights to improve the user experience for everyone, including people with disabilities. 🌐♿
 
+[![🏗️📤 Build and publish 🐳 images](https://github.com/TheBoatyMcBoatFace/axe-tester/actions/workflows/containerize.yml/badge.svg)](https://github.com/TheBoatyMcBoatFace/axe-tester/actions/workflows/containerize.yml)
+
 ## Overview 🌟
 
 The tool is built with Flask and runs inside a Docker container, making it easy to set up and use in any environment. It comes with everything you need to run accessibility tests, including Google Chrome, ChromeDriver, and the axe-core CLI.
