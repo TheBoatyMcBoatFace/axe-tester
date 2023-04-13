@@ -22,12 +22,27 @@ The Flask app will be available at `http://localhost:8083/axe?url=YOUR_URL`, whe
 You can configure the tool using environment variables in the Dockerfile:
 
 'APP_PORT': The port number on which the Flask app is served. Defaults to 8083.
+
 'PROXY_USERNAME': Your proxy username, if you're using a proxy.
+
 'PROXY_PASSWORD': Your proxy password, if you're using a proxy.
+
 'PROXY_HTTP': The full HTTP proxy URL, including the username and password. This will be used for HTTP requests.
+
 'PROXY_HTTPS': The full HTTPS proxy URL, including the username and password. This will be used for HTTPS requests.
+
 If you don't want to use a proxy, simply comment out or remove the PROXY_HTTP and PROXY_HTTPS environment variables in the Dockerfile.
+
 _TODO_: Auto-detect if docker proxy vars are set and work either way
+
+```
+FLASK_APP=axe.py
+APP_PORT=8086
+PROXY_USERNAME=WhoYouBe?
+PROXY_PASSWORD=WhySoSecret?
+PROXY_HTTP=http://host:port
+PROXY_HTTPS=http://host:port
+```
 
 ## How It Works 🔎
 
